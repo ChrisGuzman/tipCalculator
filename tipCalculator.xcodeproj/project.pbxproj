@@ -9,10 +9,11 @@
 /* Begin PBXBuildFile section */
 		7A0B85511BC1EE8E002069DB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B85501BC1EE8E002069DB /* main.m */; };
 		7A0B85541BC1EE8E002069DB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B85531BC1EE8E002069DB /* AppDelegate.m */; };
-		7A0B85571BC1EE8E002069DB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B85561BC1EE8E002069DB /* ViewController.m */; };
+		7A0B85571BC1EE8E002069DB /* TipViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7A0B85561BC1EE8E002069DB /* TipViewController.m */; };
 		7A0B855A1BC1EE8E002069DB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0B85581BC1EE8E002069DB /* Main.storyboard */; };
 		7A0B855C1BC1EE8E002069DB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7A0B855B1BC1EE8E002069DB /* Assets.xcassets */; };
 		7A0B855F1BC1EE8E002069DB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 7A0B855D1BC1EE8E002069DB /* LaunchScreen.storyboard */; };
+		7ADD0E511BC3752C00A7A32E /* SettingsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 7ADD0E501BC3752C00A7A32E /* SettingsTableViewController.m */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,12 +21,14 @@
 		7A0B85501BC1EE8E002069DB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		7A0B85521BC1EE8E002069DB /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		7A0B85531BC1EE8E002069DB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
-		7A0B85551BC1EE8E002069DB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
-		7A0B85561BC1EE8E002069DB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
+		7A0B85551BC1EE8E002069DB /* TipViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TipViewController.h; sourceTree = "<group>"; };
+		7A0B85561BC1EE8E002069DB /* TipViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TipViewController.m; sourceTree = "<group>"; };
 		7A0B85591BC1EE8E002069DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		7A0B855B1BC1EE8E002069DB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7A0B855E1BC1EE8E002069DB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		7A0B85601BC1EE8E002069DB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		7ADD0E4F1BC3752C00A7A32E /* SettingsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SettingsTableViewController.h; path = ../SettingsTableViewController.h; sourceTree = "<group>"; };
+		7ADD0E501BC3752C00A7A32E /* SettingsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SettingsTableViewController.m; path = ../SettingsTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,8 +63,10 @@
 			children = (
 				7A0B85521BC1EE8E002069DB /* AppDelegate.h */,
 				7A0B85531BC1EE8E002069DB /* AppDelegate.m */,
-				7A0B85551BC1EE8E002069DB /* ViewController.h */,
-				7A0B85561BC1EE8E002069DB /* ViewController.m */,
+				7A0B85551BC1EE8E002069DB /* TipViewController.h */,
+				7A0B85561BC1EE8E002069DB /* TipViewController.m */,
+				7ADD0E4F1BC3752C00A7A32E /* SettingsTableViewController.h */,
+				7ADD0E501BC3752C00A7A32E /* SettingsTableViewController.m */,
 				7A0B85581BC1EE8E002069DB /* Main.storyboard */,
 				7A0B855B1BC1EE8E002069DB /* Assets.xcassets */,
 				7A0B855D1BC1EE8E002069DB /* LaunchScreen.storyboard */,
@@ -149,7 +154,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				7A0B85571BC1EE8E002069DB /* ViewController.m in Sources */,
+				7ADD0E511BC3752C00A7A32E /* SettingsTableViewController.m in Sources */,
+				7A0B85571BC1EE8E002069DB /* TipViewController.m in Sources */,
 				7A0B85541BC1EE8E002069DB /* AppDelegate.m in Sources */,
 				7A0B85511BC1EE8E002069DB /* main.m in Sources */,
 			);
@@ -300,6 +306,7 @@
 				7A0B85651BC1EE8E002069DB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
