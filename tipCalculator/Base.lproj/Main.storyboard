@@ -20,14 +20,14 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tip Amount" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="bQs-0w-ZAz">
-                                <rect key="frame" x="20" y="145" width="89" height="21"/>
+                                <rect key="frame" x="20" y="131" width="89" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Total" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="MCX-m7-XpT">
-                                <rect key="frame" x="20" y="266" width="38" height="21"/>
+                                <rect key="frame" x="20" y="175" width="38" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -37,39 +37,53 @@
                                 <rect key="frame" x="183" y="78" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OFV-xC-EU0">
-                                <rect key="frame" x="203" y="145" width="97" height="21"/>
+                                <rect key="frame" x="203" y="131" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$103.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gqz-lZ-iUf">
-                                <rect key="frame" x="203" y="266" width="97" height="21"/>
+                                <rect key="frame" x="203" y="175" width="97" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="qjh-Mx-vnM">
-                                <rect key="frame" x="82" y="328" width="156" height="29"/>
+                                <rect key="frame" x="82" y="307" width="156" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <segments>
-                                    <segment title=":/"/>
-                                    <segment title=":)"/>
-                                    <segment title=":D"/>
+                                    <segment title="10%"/>
+                                    <segment title="15%"/>
+                                    <segment title="20%"/>
                                 </segments>
                                 <connections>
                                     <action selector="onValueChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="1cN-xu-B9K"/>
                                 </connections>
                             </segmentedControl>
-                            <view contentMode="scaleToFill" id="YCw-lZ-cCK">
-                                <rect key="frame" x="20" y="210" width="280" height="18"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-frown-emoticon" id="2Pv-tD-3ZV">
+                                <rect key="frame" x="82" y="273" width="27" height="26"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
-                            </view>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="facebook-smiley-face-for-comments" id="TGW-ZX-0dT">
+                                <rect key="frame" x="147" y="273" width="27" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="big-smile-emoticon-for-facebook" id="kPo-2m-7vn">
+                                <rect key="frame" x="211" y="273" width="27" height="26"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rate your Dine in Service " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="d09-Bm-e10">
+                                <rect key="frame" x="20" y="221" width="280" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <gestureRecognizers/>
@@ -86,6 +100,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="billTextField" destination="CbT-fp-9Wt" id="d42-0R-jQt"/>
+                        <outlet property="serviceLabel" destination="d09-Bm-e10" id="vXe-el-WrS"/>
                         <outlet property="tipAmount" destination="OFV-xC-EU0" id="FCA-bB-6ck"/>
                         <outlet property="tipControl" destination="qjh-Mx-vnM" id="Dtg-rt-gYK"/>
                         <outlet property="tipLabel" destination="OFV-xC-EU0" id="YAB-lA-t9n"/>
@@ -110,7 +125,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <sections>
-                            <tableViewSection headerTitle="Service Type" id="t0c-xw-afy">
+                            <tableViewSection headerTitle="Select Service Type" id="t0c-xw-afy">
                                 <cells>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" textLabel="NCa-s8-gOl" style="IBUITableViewCellStyleDefault" id="npb-PI-N44">
                                         <rect key="frame" x="0.0" y="92" width="320" height="44"/>
@@ -119,7 +134,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Sit-down restaurant" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NCa-s8-gOl">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Dine in" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="NCa-s8-gOl">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -136,7 +151,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Buffet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ltm-ar-F1Q">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Takeout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="ltm-ar-F1Q">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -153,7 +168,7 @@
                                             <rect key="frame" x="0.0" y="0.0" width="320" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Takeout" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZE-vQ-jp3">
+                                                <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Buffet" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="YZE-vQ-jp3">
                                                     <rect key="frame" x="15" y="0.0" width="290" height="43.5"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="16"/>
@@ -171,13 +186,7 @@
                             <outlet property="delegate" destination="aiY-0k-9bp" id="kaO-gj-DWd"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" id="lyA-PX-Wx6">
-                        <barButtonItem key="leftBarButtonItem" style="done" systemItem="done" id="aJ2-qc-WcY">
-                            <connections>
-                                <action selector="onPressDone:" destination="aiY-0k-9bp" id="mP8-kF-VEp"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" id="lyA-PX-Wx6"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="m1x-Fo-cSb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
@@ -202,4 +211,9 @@
             <point key="canvasLocation" x="162" y="393"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="big-smile-emoticon-for-facebook" width="16" height="16"/>
+        <image name="facebook-frown-emoticon" width="16" height="16"/>
+        <image name="facebook-smiley-face-for-comments" width="16" height="16"/>
+    </resources>
 </document>
