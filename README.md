@@ -4,7 +4,7 @@
 
 Submitted by: **Chris Guzman**
 
-Time spent: **8** hours spent in total
+Time spent: **11.5** hours spent in total
 
 ## User Stories
 
@@ -14,7 +14,7 @@ The following **required** functionality is complete:
 * [X] Settings page to change the default tip percentage.
 
 The following **optional** features are implemented:
-* [ ] UI animations
+* [X] UI animations
 * [X] Remembering the bill amount across app restarts (if <10mins)
 * [X] Using locale-specific currency and currency thousands separators.
 * [X] Making sure the keyboard is always visible and the bill amount is always the first responder. This way the user doesn't have to tap anywhere to use this app. Just launch the app and start typing.
@@ -23,7 +23,8 @@ The following **additional** features are implemented:
 
 * [X] Allow user to select different rates of tipping based on type of service they received.
 * [X] Remember the selected segmented control option across app restarts.
-* [X] Add images
+* [X] Add images.
+* [X] Restrict the input in the bill text field to values that are valid currency using a delegate.
 
 ## Video Walkthrough
 
@@ -39,7 +40,11 @@ I had to learn how to use a table view to make the app look the way I wanted it 
 
 I also had to deal with the fact that Obj C does not support switching on strings in case statements.
 
-I learned how to add images to iOS apps
+I learned how to add images to iOS apps.
+
+It was fun and challenging to learn how to use locale-specific currency and currency thousands separators. The most rewarding challenge to solve was converting commas as thousand seperators to decimals to do math.
+
+I learned how to use delegates so that I could restrict the input in the text field to values that are valid currency: such as only allowing one currency thousands separators and only allowing two decimal places after a digit.
 
 ## License
 

@@ -9,7 +9,6 @@
 #import "TipViewController.h"
 
 @interface TipViewController ()
-@property (weak, nonatomic) IBOutlet UILabel *tipAmount;
 @property (weak, nonatomic) IBOutlet UISegmentedControl *tipControl;
 @property (weak, nonatomic) IBOutlet UILabel *totalLabel;
 @property (weak, nonatomic) IBOutlet UILabel *tipLabel;
@@ -23,9 +22,20 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Tip Calculator";
+    self.billTextField.delegate = self;
     [self.billTextField setBorderStyle:UITextBorderStyleNone];
 
 }
+
+- (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
+    NSString *newString = [textField.text stringByReplacingCharactersInRange:range withString:string];
+    NSString *expression = @"^[0-9]*((\\.|,)[0-9]{0,2})?$";
+    NSError *error = nil;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:expression options:NSRegularExpressionCaseInsensitive error:&error];
+    NSUInteger numberOfMatches = [regex numberOfMatchesInString:newString options:0 range:NSMakeRange(0, [newString length])];
+    return numberOfMatches != 0;
+}
+
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -135,8 +145,21 @@
     NSString *localizedTotalAmount = [formatter stringFromNumber:nsTotalAmount];
     NSString *localizedTipAmount = [formatter stringFromNumber:nsTipAmount];
     
+    [UIView transitionWithView:self.tipLabel
+                      duration:.5f
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        
     self.tipLabel.text = [NSString stringWithFormat:@"%@", localizedTipAmount];
+                    } completion:nil];
+
+    [UIView transitionWithView:self.totalLabel
+                      duration:.5f
+                       options:UIViewAnimationOptionTransitionFlipFromBottom
+                    animations:^{
+                        
     self.totalLabel.text = [NSString stringWithFormat:@"%@", localizedTotalAmount];
+                    } completion:nil];
 
 }
 

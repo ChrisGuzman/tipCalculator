@@ -33,13 +33,14 @@
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" id="CbT-fp-9Wt">
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="right" minimumFontSize="17" clearButtonMode="always" id="CbT-fp-9Wt">
                                 <rect key="frame" x="183" y="78" width="117" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                                 <connections>
                                     <action selector="onEdit:" destination="BYZ-38-t0r" eventType="editingChanged" id="JSz-hz-epw"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="LXx-iQ-L3x"/>
                                 </connections>
                             </textField>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$3.00" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="OFV-xC-EU0">
@@ -104,7 +105,6 @@
                     <connections>
                         <outlet property="billTextField" destination="CbT-fp-9Wt" id="d42-0R-jQt"/>
                         <outlet property="serviceLabel" destination="d09-Bm-e10" id="vXe-el-WrS"/>
-                        <outlet property="tipAmount" destination="OFV-xC-EU0" id="FCA-bB-6ck"/>
                         <outlet property="tipControl" destination="qjh-Mx-vnM" id="Dtg-rt-gYK"/>
                         <outlet property="tipLabel" destination="OFV-xC-EU0" id="YAB-lA-t9n"/>
                         <outlet property="totalLabel" destination="Gqz-lZ-iUf" id="MDo-g9-mgo"/>
