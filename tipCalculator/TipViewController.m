@@ -23,13 +23,15 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.title = @"Tip Calculator";
+    [self.billTextField setBorderStyle:UITextBorderStyleNone];
+
 }
 
 - (void)viewWillAppear:(BOOL)animated {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
     [defaults synchronize];
     NSString *serviceType = [defaults objectForKey:@"service"];
-    float amount = [defaults floatForKey:@"bill"];
+    double amount = [defaults doubleForKey:@"bill"];
     NSInteger control = [defaults integerForKey:@"segmentIndex"];
     if (serviceType != nil) {
         self.serviceLabel.text = [NSString stringWithFormat:@"Rate your %@ service", serviceType];
@@ -40,7 +42,14 @@
 
     self.tipControl.selectedSegmentIndex = control;
     if (amount > 0) {
-            [self.billTextField setText:[NSString stringWithFormat:@"%.2f", amount]];
+        NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+        [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+        [formatter setLocale:[NSLocale currentLocale]];
+        [formatter setCurrencySymbol: @""];
+        NSNumber *nsAmount = @(amount);
+        NSString *localizedAmount = [formatter stringFromNumber:nsAmount];
+        
+        [self.billTextField setText:[NSString stringWithFormat:@"%@", localizedAmount]];
     }
     [self updateValues];
 }
@@ -57,6 +66,9 @@
 - (IBAction)onTap:(UITapGestureRecognizer *)sender {
     [self updateValues];
 }
+- (IBAction)onPress:(id)sender {
+    [self updateValues];
+}
 
 - (void)updateValues {
     NSUserDefaults *defaults = [NSUserDefaults standardUserDefaults];
@@ -70,21 +82,29 @@
         [tipValues addObject:@(0.25)];
         [self.tipControl setTitle:@"25%" forSegmentAtIndex:2];
     }
-    else if ([serviceType isEqualToString:@"Buffet"]) {
-        [tipValues addObject:@(0.03)];
-        [self.tipControl setTitle:@"03%" forSegmentAtIndex:0];
-        [tipValues addObject:@(0.05)];
-        [self.tipControl setTitle:@"05%" forSegmentAtIndex:1];
+    else if ([serviceType isEqualToString:@"Delivery"]) {
         [tipValues addObject:@(0.10)];
-        [self.tipControl setTitle:@"10%" forSegmentAtIndex:2];
+        [self.tipControl setTitle:@"10%" forSegmentAtIndex:0];
+        [tipValues addObject:@(0.15)];
+        [self.tipControl setTitle:@"15%" forSegmentAtIndex:1];
+        [tipValues addObject:@(0.20)];
+        [self.tipControl setTitle:@"20%" forSegmentAtIndex:2];
     }
     else if ([serviceType isEqualToString:@"Takeout"]) {
         [tipValues addObject:@(0.05)];
-        [self.tipControl setTitle:@"05%" forSegmentAtIndex:0];
+        [self.tipControl setTitle:@"5%" forSegmentAtIndex:0];
         [tipValues addObject:@(0.10)];
         [self.tipControl setTitle:@"10%" forSegmentAtIndex:1];
         [tipValues addObject:@(0.15)];
         [self.tipControl setTitle:@"15%" forSegmentAtIndex:2];
+    }
+    else if ([serviceType isEqualToString:@"Buffet"]) {
+        [tipValues addObject:@(0.03)];
+        [self.tipControl setTitle:@"3%" forSegmentAtIndex:0];
+        [tipValues addObject:@(0.05)];
+        [self.tipControl setTitle:@"5%" forSegmentAtIndex:1];
+        [tipValues addObject:@(0.10)];
+        [self.tipControl setTitle:@"10%" forSegmentAtIndex:2];
     }
     else {
         [tipValues addObject:@(0.15)];
@@ -95,25 +115,38 @@
         [self.tipControl setTitle:@"25%" forSegmentAtIndex:2];
     }
     
-    float billAmount = ([self.billTextField.text floatValue]);
+    NSNumberFormatter *formatter = [[NSNumberFormatter alloc] init];
+    [formatter setNumberStyle:NSNumberFormatterCurrencyStyle];
+    [formatter setLocale:[NSLocale currentLocale]];
     
-    [defaults setFloat:(billAmount) forKey:@"bill"];
+    NSNumber *number = [[NSNumberFormatter new] numberFromString: self.billTextField.text];
+    double billAmount = [number doubleValue];
+    
+    [defaults setDouble:billAmount forKey:@"bill"];
     [defaults setInteger:self.tipControl.selectedSegmentIndex forKey:@"segmentIndex"];
     [defaults synchronize];
     
-    float tipAmount = [tipValues [self.tipControl.selectedSegmentIndex] floatValue] * billAmount;
+    double tipAmount = [tipValues [self.tipControl.selectedSegmentIndex] doubleValue] * billAmount;
+    double totalAmount = billAmount + tipAmount;
     
-    float totalAmount = billAmount + tipAmount;
+    NSNumber *nsTotalAmount = @(totalAmount);
+    NSNumber *nsTipAmount = @(tipAmount);
     
-    self.tipLabel.text = [NSString stringWithFormat:@"$%0.2f", tipAmount];
+    NSString *localizedTotalAmount = [formatter stringFromNumber:nsTotalAmount];
+    NSString *localizedTipAmount = [formatter stringFromNumber:nsTipAmount];
     
-    self.totalLabel.text = [NSString stringWithFormat:@"$%0.2f", totalAmount];
-    
-    
+    self.tipLabel.text = [NSString stringWithFormat:@"%@", localizedTipAmount];
+    self.totalLabel.text = [NSString stringWithFormat:@"%@", localizedTotalAmount];
+
 }
-- (IBAction)onValueChange:(UISegmentedControl *)sender {
+
+- (IBAction)onEdit:(id)sender {
     [self updateValues];
 }
 
+
+- (IBAction)onTextFieldUpdate:(id)sender {
+    [self updateValues];
+}
 
 @end
